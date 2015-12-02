@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/editclear.png</file>
+        <file>images/edit-delete.png</file>
+        <file>images/edit-copy.png</file>
+        <file>images/document-open.png</file>
+        <file>images/document-open-folder.png</file>
+        <file>images/help-hint.png</file>
+        <file>images/finder.png</file>
+        <file>images/media-playback-start.png</file>
+        <file>images/media-playback-stop.png</file>
+        <file>images/application-exit.png</file>
+        <file>images/document-save-as.png</file>
+    </qresource>
+</RCC>
