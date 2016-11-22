@@ -16,7 +16,9 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 * 
 ******************************************************************/
+#ifndef _WIN32
 #include <gio/gio.h>
+#endif
 #include "kfindtreeview.h"
 #include "byteshumanizer.h"
 #include "finddialog.h"
@@ -301,6 +303,7 @@ QVariant KFindItem::data( int column, int role ) const {
     return QVariant();
 }
 
+#ifndef _WIN32
 class MimeProcess: public QProcess {
     Q_OBJECT
 public:
@@ -348,8 +351,14 @@ private:
     QString filePath;
 };
 
+#endif
+
 void KFindItem::execute() {
+#ifndef _WIN32
     new MimeProcess(getFileItem().filePath());
+#else
+    QDesktopServices::openUrl(QUrl(getFileItem().filePath()));
+#endif
 }
 
 //END KFindItem
@@ -542,6 +551,8 @@ void KFindTreeView::deleteSelectedFiles() {
     }
 }
 
+#ifndef _WIN32
 #include "kfindtreeview.moc"
+#endif
 
 //END KFindTreeView
