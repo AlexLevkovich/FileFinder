@@ -13,8 +13,8 @@ INCLUDEPATH += ./mimetypes
 INCLUDEPATH += ./io
 }
 
-CONFIG += link_pkgconfig
-PKGCONFIG += gobject-2.0 gio-2.0
+unix:CONFIG += link_pkgconfig
+unix:PKGCONFIG += gobject-2.0 gio-2.0
 
 isEmpty(INSTALL_PREFIX) {
     INSTALL_PREFIX = /usr/local
